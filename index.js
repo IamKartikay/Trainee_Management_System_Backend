@@ -19,6 +19,13 @@ app.use("/api/admin", userRoutes);
 
 const PORT = process.env.PORT || 5001;
 
+app.use(cors({
+  origin: ["https://traineemngsys.netlify.app/"],
+  methods: ["POST", "GET", "DELETE", "PUT"],
+  credentials: true
+}))
+
+
 
 //connection
 main().catch((err) => console.log(err));
